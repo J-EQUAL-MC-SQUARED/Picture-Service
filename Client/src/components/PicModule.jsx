@@ -22,6 +22,7 @@ class PicModule extends React.Component {
     const { productId } = this.props;
     axios.get(`/api/picture-service/${productId}`)
       .then((data) => {
+        console.log(data.data);
         this.setState({ description: data.data[0].description });
         this.setState({ largePics: data.data[0].largePics });
         this.setState({ thumbnails: data.data[0].thumbnails });
