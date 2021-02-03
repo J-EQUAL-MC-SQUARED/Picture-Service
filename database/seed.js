@@ -1,11 +1,12 @@
 const faker = require('faker');
-const mongo = require('./index.js');
+const ObjectsToCsv = require('objects-to-csv');
+// const mongo = require('./index.js');
 
 const itemsArr = [];
 
 const arrayBuilder = () => {
   let i = 0;
-  while (i < 100) {
+  while (i < 20) {
     itemsArr.push({
       product_id: i,
       description: faker.commerce.productName(),
@@ -18,9 +19,16 @@ const arrayBuilder = () => {
 
 arrayBuilder();
 
-const insertItemPictures = () => {
-  mongo.Item.create(itemsArr)
-    .then(() => mongo.db.close());
-};
+// const insertItemPictures = () => {
+//   mongo.Item.create(itemsArr)
+//     .then(() => mongo.db.close());
+// };
 
-insertItemPictures();
+// insertItemPictures();
+(async () => {
+  const csv = new ObjectsToCsv(itemsArr);
+  // Save to file:
+  await csv.toDisk('./test.csv');
+  // Return the CSV file as string:
+  console.log(await csv.toString());
+})();
