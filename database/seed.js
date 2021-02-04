@@ -1,6 +1,6 @@
+/* eslint-disable no-console */
 const faker = require('faker');
-const ObjectsToCsv = require('objects-to-csv');
-// const mongo = require('./index.js');
+const mongo = require('./index.js');
 
 const itemsArr = [];
 
@@ -19,16 +19,9 @@ const arrayBuilder = () => {
 
 arrayBuilder();
 
-// const insertItemPictures = () => {
-//   mongo.Item.create(itemsArr)
-//     .then(() => mongo.db.close());
-// };
+const insertItemPictures = () => {
+  mongo.Item.create(itemsArr)
+    .then(() => mongo.db.close());
+};
 
-// insertItemPictures();
-(async () => {
-  const csv = new ObjectsToCsv(itemsArr);
-  // Save to file:
-  await csv.toDisk('./test.csv');
-  // Return the CSV file as string:
-  console.log(await csv.toString());
-})();
+insertItemPictures();

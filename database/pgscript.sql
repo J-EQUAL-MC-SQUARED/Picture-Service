@@ -27,8 +27,6 @@ COPY pictures(picid, fkitemid, largePics, thumbnails)
 FROM '/Users/hezki96/dev/Picture-Service/database/csv/pictures.csv'
 CSV HEADER;
 
---GET REQUEST POSSIBLE QUERY
+--GET REQUEST QUERY GONNA BE LIKE DIS
 
-SELECT description, largePics, thumbnails FROM items INNER JOIN pictures ON itemid WHERE itemid = 1;
-
--- WILL GET ALL OF PICS FROM THE PARTICULAR itemid
+SELECT description, largePics, thumbnails FROM items INNER JOIN pictures ON itemid = fkitemid WHERE itemid = 1;
