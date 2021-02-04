@@ -3,7 +3,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const expressStaticGzip = require('express-static-gzip');
-// const mongo = require('../database/index.js');
 const pool = require('../database/pgIndex.js');
 
 const app = express();
@@ -33,8 +32,8 @@ app.get('/api/picture-service/:id', async (req, res) => {
     const obj = {
       description: rows[0].description,
       product_id: rows[0].itemid,
-      largePics: largePicsArr,
-      thumbnails: thumbnailsArr,
+      largePics: largePicsArr.reverse(),
+      thumbnails: thumbnailsArr.reverse(),
     };
     result.push(obj);
     res.send(result);
