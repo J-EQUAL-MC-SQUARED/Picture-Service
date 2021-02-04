@@ -16,11 +16,14 @@ CREATE TABLE pictures (
       REFERENCES items(itemid)
 );
 
+CREATE INDEX pictures_fkitemid_index
+on pictures ("fkitemid" desc);
+
 -- NEED TO WRITE THE CSV FIRST FOR GENERATING BULK SET OF DATA
 
 -- This script is for generating db
 COPY items(itemid, description)
-FROM '/Users/hezki96/dev/Picture-Service/database/csv/items2.csv'
+FROM '/Users/hezki96/dev/Picture-Service/database/csv/items.csv'
 CSV HEADER;
 
 COPY pictures(picid, fkitemid, largePics, thumbnails)
