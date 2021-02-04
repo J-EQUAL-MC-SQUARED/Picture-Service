@@ -4,3 +4,8 @@ node_modules
 /Client/public/picture_app.js.gz
 process.env
 coverage
+.DS_Store
+images498
+images70
+*.csv
+/database/csv
