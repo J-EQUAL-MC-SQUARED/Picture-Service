@@ -7,3 +7,5 @@ coverage
 .DS_Store
 images498
 images70
+*.csv
+/database/csv
