@@ -9,3 +9,6 @@ images498
 images70
 *.csv
 /database/csv
+newrelic.js
+newrelic_agent.log
+*.env

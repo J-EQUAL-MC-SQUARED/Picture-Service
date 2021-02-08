@@ -1,12 +1,14 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-console */
+require('newrelic');
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const expressStaticGzip = require('express-static-gzip');
 const pool = require('../database/pgIndex.js');
 
 const app = express();
-const port = 3004;
+const port = process.env.PORT || 3004;
 
 app.use(bodyParser.json());
 
