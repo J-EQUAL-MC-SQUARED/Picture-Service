@@ -2,6 +2,7 @@ node_modules
 /Client/public/picture_app.js
 /Client/public/picture_app.js.br
 /Client/public/picture_app.js.gz
+Client/public/picture_app.js.gz
 process.env
 coverage
 .DS_Store
@@ -12,3 +13,4 @@ images70
 newrelic.js
 newrelic_agent.log
 *.env
+Client/public/loaderio-b3b2d951145fa1baed06dbe78322dfee.txt
