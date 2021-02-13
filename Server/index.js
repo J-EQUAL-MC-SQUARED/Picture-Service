@@ -1,19 +1,13 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-console */
+require('newrelic');
+require('dotenv').config();
 const express = require('express');
-const bodyParser = require('body-parser');
 const expressStaticGzip = require('express-static-gzip');
 const pool = require('../database/pgIndex.js');
 
 const app = express();
-const port = 3004;
-
-app.use(bodyParser.json());
-
-app.use('/', (req, res, next) => {
-  console.log(`Now Handling ${req.method} Request from ${req.path}`);
-  next();
-});
+const PORT = process.env.PORT || 3004;
 
 app.get('/api/picture-service/:id', async (req, res) => {
   const id = parseInt(req.path.split('/')[3], 10) + 1;
@@ -48,6 +42,7 @@ app.use('/', expressStaticGzip('./Client/public', {
   orderPreference: ['br', 'gz'],
 }));
 
-app.listen(port, () => {
-  console.log(`server listening for picture service on port ${port}`);
+
+app.listen(PORT, () => {
+  console.log(`server listening for picture service on port ${PORT}`);
 });
