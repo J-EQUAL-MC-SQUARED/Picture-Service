@@ -28,6 +28,6 @@ Around 50,000 REQUEST per MINUTE, No downtime and No error
 
 Christoffel Angga - chris.ang.dev@gmail.com
 <br/>
-Project Link: [https://github.com/CloverJoy/typeAndJoy](https://github.com/J-EQUAL-MC-SQUARED/Picture-Service)
+Project Link: [https://github.com/J-EQUAL-MC-SQUARED/Picture-Service](https://github.com/J-EQUAL-MC-SQUARED/Picture-Service)
 <br/>
 Linkedin: [https://www.linkedin.com/in/christoffelangga/](https://www.linkedin.com/in/christoffelangga/) 
